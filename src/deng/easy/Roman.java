@@ -27,8 +27,4 @@ public class Roman {
         result += romanNums[romanChars.indexOf(s.charAt(s.length() - 1))];
         return result;
     }
-
-    public static void main(String[] args){
-        System.out.println(new Roman().romanToInt("MCMXCIV")); //1994
-    }
 }
