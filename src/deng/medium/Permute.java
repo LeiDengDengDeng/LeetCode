@@ -13,6 +13,11 @@ public class Permute {
         return result;
     }
 
+    /**
+     * @param results
+     * @param nums    输入的无重复数组序列
+     * @param s       数组起始位置指针，起始位置之前的数字在本次函数使用中无意义
+     */
     public void permute(List<List<Integer>> results, int[] nums, int s) {
         if (s == nums.length) {
             List<Integer> result = new ArrayList<>();
@@ -24,6 +29,7 @@ public class Permute {
 
         for (int i = s; i < nums.length; i++) {
             swap(nums, s, i);
+            // s取s+1,代表递归的nums指针位置前移一位
             permute(results, nums, s + 1);
             swap(nums, s, i);
         }
