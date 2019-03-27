@@ -1,13 +1,11 @@
 package lynn.easy;
 
-import java.util.Arrays;
-
 /**
  * Created by liying on 2018/7/16.
  * <p>
  * 给定一个链表，判断链表中是否有环。
  */
-public class circularChain {
+public class CircularChain {
     /**
      * Definition for singly-linked list.
      * class ListNode {
@@ -37,7 +35,7 @@ public class circularChain {
 
 
     public static void main(String[] args) {
-        circularChain c = new circularChain();
+        CircularChain c = new CircularChain();
         ListNode n1 = new ListNode(3);
         ListNode n2 = new ListNode(2);
         ListNode n3 = new ListNode(0);
