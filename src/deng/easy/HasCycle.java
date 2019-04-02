@@ -1,5 +1,7 @@
 package deng.easy;
 
+import deng.common.ListNode;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,12 +29,3 @@ public class HasCycle {
     }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
