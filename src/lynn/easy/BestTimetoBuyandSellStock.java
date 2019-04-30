@@ -5,6 +5,8 @@ package lynn.easy;
  * Created by liying on 2019/4/11.
  */
 public class BestTimetoBuyandSellStock {
+
+    //前i天的最大收益 = max{前i-1天的最大收益，第i天的价格-前i-1天中的最小价格}
     public int maxProfit(int[] prices) {
         int res = 0;
         int min = prices[0];
