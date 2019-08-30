@@ -17,27 +17,31 @@ import java.util.HashMap;
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] res=new int[2];
-        HashMap map=new HashMap();
+        HashMap<Integer,Integer> map=new HashMap();
         for(int i=0;i<nums.length;i++) {
-            map.put(i,target-nums[i]);
+            map.put(target-nums[i],i);
         }
         for(int j=0;j<nums.length;j++){
-           if(map.containsValue(nums[j])&&nums[j]!=(int)map.get(j)){
-                res[0]=j;
-
-                break;
-
-           }
+            if(map.get(nums[j])!=null){
+                int i=map.get(nums[j]);
+                if(i!=j) {
+                    res[0] = j;
+                    res[1] = i;
+                    break;
+                }
+            }
         }
         return res;
 
     }
 
     public static void main(String[] args){
-            int[] nums={1,2, 7, 11, 15};
-            int target=9;
-            TwoSum twoSum=new TwoSum();
-            int[] res=twoSum.twoSum(nums,target);
+//        int[] nums={1,2, 7, 11, 15};
+//        int target=9;
+        int[] nums={3,3};
+        int target=6;
+        TwoSum twoSum=new TwoSum();
+        int[] res=twoSum.twoSum(nums,target);
 
 
     }
