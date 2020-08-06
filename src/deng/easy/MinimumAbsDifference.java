@@ -1,9 +1,6 @@
 package deng.easy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author deng
@@ -22,9 +19,11 @@ public class MinimumAbsDifference {
             max = Math.max(max, i);
         }
 
-        // TODO:use bitset
+        // 提交后发现，BitSet节约了些许空间(58MB->50MB)，但耗时大幅提升(17ms->37ms)，BitSet效率没有想象中高
         int[] arrMap = new int[max - min + 1];
+        // BitSet arrBitSet = new BitSet(max - min + 1);
         for (int i : arr) {
+            // arrBitSet.set(i - min);
             arrMap[i - min] = 1;
         }
 
@@ -32,7 +31,9 @@ public class MinimumAbsDifference {
         List<List<Integer>> res = new ArrayList<>();
         int minAbsDiff = Integer.MAX_VALUE;
         int lastLoc = 0;
+        // for (int i = 1; i < arrBitSet.size(); i++) {
         for (int i = 1; i < arrMap.length; i++) {
+            // if (arrBitSet.get(i)) {
             if (arrMap[i] == 1) {
                 if (minAbsDiff > i - lastLoc) {
                     minAbsDiff = i - lastLoc;
