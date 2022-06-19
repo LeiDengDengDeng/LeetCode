@@ -12,7 +12,7 @@ public final class ListNodeUtil {
     }
 
     public static ListNode generateListNode(int[] nums) {
-        if (nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return null;
         }
         ListNode fakeHead = new ListNode(0);
